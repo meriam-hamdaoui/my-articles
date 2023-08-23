@@ -1,13 +1,33 @@
 ## In this file I'll take you through the project coding step by step after settig up the react app and it' dependecies
 
 1 - First things first let me explain the app purpose:
-    As the name indicate, this app will give the user a form to write/add articles to his website
+    As the name indicate, this app will give the user a form to write/add/delete articles to his website
     and to do this he will need a form to fill in the article. An article needs a title and a body(description)
 
 2 - To define an article in this project using typescript template, we need an interface that defines the article object structure
     so I have created a type.d.ts file where all the interfaces, types and props will be define. 
 
-3 - The articles form is defined into AddArticle functionul component: 
+3 - The articles form is defined into AddArticle functional component: 
     It has a save function as a props, which i defined it as a type props inside the type.d.ts file as well
 
-The second thing is that we want our users to be aware that the form is empty so he can not add an empty article
+4 - Mapping the article to our page needs an article component format, which is the Article.tsx file.
+    All articles have a delete button so the user can delete his article any time.
+    It consumes an object as props which we we'll define it inside our type file, this object have 2 propreties:
+        i - an article of type article interface
+        ii - a function to delete an article
+
+// Till now we were at the easy part of our project, the components we need
+// Now, we're gonna move on to the action using redux (action types/creator and the store)
+
+5 - Action Types: we only have 2 actions: add and remove, written into action-types.ts file
+    1st one is for adding new article while removing is just deleting an existing article from the list.
+
+6 - Action Creator : 2 functions associeted to the Action Types as it indicates. add and remove articles:
+    Each action will have a type, which it's define into type.d.ts file
+    The both functions consumes an article as an argument and returns nothing
+
+7 - The reducer file contain the initiale state of type ArticleState (defined into type.d.ts file) and the reducer function to dispatch to the component.
+    We will need a dispacth type for this.
+    Beside the reducer actions, we will create the store to provide it to the articles app
+
+One last thing is that we want our users to be aware that the form is empty so he can not add an empty article, so I disable the add button

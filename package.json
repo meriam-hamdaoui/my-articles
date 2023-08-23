@@ -44,8 +44,10 @@
     ]
   },
   "devDependencies": {
+    "@types/nanoid": "^3.0.0",
     "@types/react-redux": "^7.1.26",
     "@types/redux": "^3.6.0",
-    "@types/redux-thunk": "^2.1.0"
+    "@types/redux-thunk": "^2.1.0",
+    "nanoid": "^4.0.2"
   }
 }

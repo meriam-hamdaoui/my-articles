@@ -1,0 +1,13 @@
+## In this file I'll take you through the project coding step by step after settig up the react app and it' dependecies
+
+1 - First things first let me explain the app purpose:
+    As the name indicate, this app will give the user a form to write/add articles to his website
+    and to do this he will need a form to fill in the article. An article needs a title and a body(description)
+
+2 - To define an article in this project using typescript template, we need an interface that defines the article object structure
+    so I have created a type.d.ts file where all the interfaces, types and props will be define. 
+
+3 - The articles form is defined into AddArticle functionul component: 
+    It has a save function as a props, which i defined it as a type props inside the type.d.ts file as well
+
+The second thing is that we want our users to be aware that the form is empty so he can not add an empty article

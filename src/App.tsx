@@ -1,5 +1,14 @@
+import { AddArticle } from "./components/AddArticle";
+
 function App() {
-  return <div className="App"></div>;
+  const saveArticle = () => {};
+
+  return (
+    <main className="App">
+      <h1>My Articles</h1>
+      <AddArticle saveArticle={saveArticle} />
+    </main>
+  );
 }
 
 export default App;

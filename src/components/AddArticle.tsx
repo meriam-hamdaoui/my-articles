@@ -3,10 +3,12 @@ import React from "react";
 import { nanoid } from "nanoid";
 import { IArticle, SaveArticleProps } from "../type";
 
+type EventProps = React.ChangeEvent<HTMLTextAreaElement> &
+  React.ChangeEvent<HTMLInputElement>;
 export const AddArticle = ({ saveArticle }: SaveArticleProps) => {
   const [article, setArticle] = React.useState<IArticle | {}>(); // usestate to keep track of the input changes
 
-  const handleChange = (event: React.FormEvent<HTMLInputElement>) =>
+  const handleChange = (event: EventProps) =>
     setArticle({
       ...article,
       [event.currentTarget.id]: event.currentTarget.value,
@@ -15,7 +17,7 @@ export const AddArticle = ({ saveArticle }: SaveArticleProps) => {
   // submit function to lunch the save action
   const addNewArticles = (e: React.FormEvent) => {
     e.preventDefault();
-    saveArticle({ id: nanoid(), ...article });
+    saveArticle(article);
     console.log("first article => ", {
       id: nanoid(),
       ...article,
@@ -31,8 +33,10 @@ export const AddArticle = ({ saveArticle }: SaveArticleProps) => {
         placeholder="Title"
         onChange={handleChange}
       />
-      <input
-        type="text"
+
+      <textarea
+        rows={10}
+        cols={42}
         name="body"
         id="body"
         placeholder="Description"

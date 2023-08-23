@@ -1,3 +1,4 @@
+import React from "react";
 import { useSelector } from "react-redux";
 import { AddArticle } from "./components/AddArticle";
 import { ArticleState, IArticle, DispatchType } from "./type";
@@ -15,8 +16,10 @@ function App() {
   // initiate dispatch
   const dispatch: Dispatch<any> = useDispatch();
 
-  const saveArticle = () => {};
-
+  const saveArticle = React.useCallback(
+    (article: IArticle) => dispatch(addArticle(article)),
+    [dispatch]
+  );
   return (
     <main className="App">
       <h1>My Articles</h1>

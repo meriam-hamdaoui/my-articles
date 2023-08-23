@@ -31,7 +31,8 @@ main > h1 {
   border-radius: 10px;
 }
 
-.Add-article input {
+.Add-article input,
+.Add-article textarea {
   display: block;
   margin: 1rem auto;
   width: 20rem;

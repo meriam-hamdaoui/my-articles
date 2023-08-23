@@ -30,4 +30,6 @@
     We will need a dispacth type for this.
     Beside the reducer actions, we will create the store to provide it to the articles app
 
+8 - After all this work, let's create our store and dispatch all the action to our buttons
+
 One last thing is that we want our users to be aware that the form is empty so he can not add an empty article, so I disable the add button

@@ -1,17 +1,27 @@
-import { IArticle, ArticleAction, DispatchType } from "../type";
+import { IArticle, ArticleAction, DispatchType, ArticleProps } from "../type";
 import { ADD_ARTICLE, REMOVE_ARTICLE } from "./action-type";
 
-export const addArticle = (article: IArticle, dispatch: DispatchType) => {
+export function addArticle(article: IArticle) {
   const action: ArticleAction = {
     type: ADD_ARTICLE,
     article,
   };
-  dispatch(action);
-};
-export const removeArticle = (article: IArticle, dispatch: DispatchType) => {
+
+  return simulateHttpRequest(action);
+}
+
+export function removeArticle(article: IArticle) {
   const action: ArticleAction = {
     type: REMOVE_ARTICLE,
     article,
   };
-  dispatch(action);
-};
+  return simulateHttpRequest(action);
+}
+
+export function simulateHttpRequest(action: ArticleAction) {
+  return (dispatch: DispatchType) => {
+    setTimeout(() => {
+      dispatch(action);
+    }, 500);
+  };
+}

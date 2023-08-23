@@ -1,3 +1,28 @@
+# This project is a simple react app using the typescript template and redux
+
+The main purpose of this project is to understand how to work with redux in a react typescript app.
+
+# Steps to create app
+
+1. Create the react app using the command :
+   yarn create react-app project-name --template typescript
+   or
+   npx create-react-app project-name --template typescript
+
+2. Inside your project-name folder, Install the redux dependencies :
+   yarn add redux react-redux redux-thunk
+   or
+   npm install redux react-redux redux-thunk
+
+3. Install the types of the redux dependencies to help TypeScript understand the libraries :
+   yarn add -D @types/redux @types/react-redux @types/redux-thunk
+   or
+   npm install -D @types/redux @types/react-redux @types/redux-thunk
+
+4. Create two folders, "components" where we're gonna write our components ts files and "store" where all the redux files while be written
+
+To create this project I followed the instriction on [freedCodeCamp](https://www.freecodecamp.org/news/how-to-use-redux-in-your-react-typescript-app/#prerequisites)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
